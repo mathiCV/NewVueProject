@@ -10,7 +10,7 @@ const router = createRouter({
       component: LibrosView
     },
     {
-      path: '/nuevo-libro',
+      path: '/nuevoLibro',
       name: 'nuevoLibro',
       component: NuevoLibroView
     }
