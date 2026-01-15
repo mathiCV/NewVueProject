@@ -15,7 +15,7 @@
                 try{
                     const response = await axios.post(`http://localhost:3000/libros`, nuevoLibro.value)
 
-                    setTimerout(()=>{
+                    setTimeout(()=>{
                         alert("Libro creado con éxito");
                     }, 500
                     );
@@ -66,13 +66,56 @@
                     <input name="disponibilidad" v-model="nuevoLibro.disponibilidad" type="text" placeholder="Disponibilidad">
                 </div>
             </div>
-            <button type="submit">Crear nuevo Libro</button>
+            <button class="btn enviar" type="submit">Crear nuevo Libro</button>
         </form>
     </main>
 </template>
 
 
 <style scoped>
+    form{           
+        width: 80%;                                                                     
+        margin: 10px auto;
+        padding: 20px;
+        border: solid 1px #000;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    }
+    label{
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        font-size: 1rem;
+    }
+    input{
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #100;
+        margin-bottom: 10px;
+        font-family: Playfair Display;
+        font-size: 1rem;
+    }
+    input:hover{
 
+    }
+    .btn{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-family: "Playfair Display";
+        color: #000;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 5px;
+    }
+    .enviar{
+        background-color: green;
+        color: #fff;    
+    }
+    .enviar:hover{
+          background-color: rgba(34, 202, 79, 0.688);
+    }
 
 </style>
