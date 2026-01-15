@@ -62,12 +62,12 @@
                     <td>{{ libro.titulo }}</td>
                     <td>{{ libro.autor }}</td>
                     <td>{{ libro.ISBN }}</td>
-                    <td>{{ libro.genero }}</td>
+                    <td>{{ libro.genero }}</td>         
                     <td>{{ libro.disponibilidad }}</td>
                     <td>{{ libro.acciones }}</td>
                     <div>
                         <button @click="eliminarLibros(libro.id, libro.titulo)">Eliminar</button>
-                        <button @click="">Editar</button>
+                        <RouterLink :to="`/editarLibro/${libro.id}`">Editar</RouterLink>
                     </div>
                 </tr>
             </tbody>

@@ -14,6 +14,12 @@
             const CrearLibro = async () =>{
                 try{
                     const response = await axios.post(`http://localhost:3000/libros`, nuevoLibro.value)
+
+                    setTimerout(()=>{
+                        alert("Libro creado con éxito");
+                    }, 500
+                    );
+
                     //Limpiando formulario
                     nuevoLibro.value.titulo = "";
                     nuevoLibro.value.autor = "";
@@ -62,7 +68,7 @@
             </div>
             <button type="submit">Crear nuevo Libro</button>
         </form>
-    </main>>
+    </main>
 </template>
 
 
