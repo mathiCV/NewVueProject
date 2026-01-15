@@ -4,16 +4,17 @@
     export default {
 
         setup() {
-            const nuevoLibro = {
-                titulo : "",
-                autor : "",
-                ISBN : "",
-                genero : "",
-                disponibilidad : ""
-            };
+            const nuevoLibro = ref({
+                titulo: "",
+                autor: "",
+                ISBN: "",
+                genero: "",
+                disponibilidad: ""
+            });
             const CrearLibro = async () =>{
                 try{
                     const response = await axios.post(`http://localhost:3000/libros`, nuevoLibro.value)
+                    //Limpiando formulario
                     nuevoLibro.value.titulo = "";
                     nuevoLibro.value.autor = "";
                     nuevoLibro.value.ISBN = "";
@@ -26,7 +27,8 @@
                 }
             }
             return {
-                nuevoLibro
+                nuevoLibro,
+                CrearLibro
             }
         }
     };

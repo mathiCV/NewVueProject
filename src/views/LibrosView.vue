@@ -60,9 +60,9 @@
                 <tr v-for = "libro in libros" :key="libro.id">
                     <td>{{ libro.id }}</td>
                     <td>{{ libro.titulo }}</td>
+                    <td>{{ libro.autor }}</td>
                     <td>{{ libro.ISBN }}</td>
                     <td>{{ libro.genero }}</td>
-                    <td>{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
                     <td>{{ libro.acciones }}</td>
                     <div>
